@@ -1,5 +1,9 @@
-function ComponentB({ increment, incrementTwo }) {
-  console.log(increment);
+import { useContext } from 'react';
+import { NumberContext } from '../../context/NumberContext';
+
+function ComponentB() {
+  const { increment, incrementTwo } = useContext(NumberContext);
+
   return (
     <div className='buttons_B'>
       <button onClick={increment}>Click B</button>

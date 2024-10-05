@@ -1,17 +1,10 @@
-import { useState } from 'react';
-import './A.scss';
+import { useContext } from 'react';
 import ComponentB from '../componentB/ComponentB';
+import { NumberContext } from '../../context/NumberContext';
+import './A.scss';
 
 function ComponentA() {
-  const [number, setNumber] = useState(0);
-
-  const increment = () => {
-    setNumber((number) => number + 1);
-  };
-
-  const incrementTwo = () => {
-    setNumber((prevNumber) => prevNumber + 2);
-  };
+  const { number, increment } = useContext(NumberContext);
 
   return (
     <div className='wrapper_A'>
@@ -19,7 +12,7 @@ function ComponentA() {
       <div className='buttons'>
         <button onClick={increment}>Click A</button>
 
-        <ComponentB increment={increment} incrementTwo={incrementTwo} />
+        <ComponentB increment={increment} />
       </div>
     </div>
   );
