@@ -1,8 +1,15 @@
-# React + Vite
+```
+let number = 0
+//cho 2 component A và component B, //trong đó B là con của A
+<A>
+ counter: {number}
+ <B />
+ <button>Click A<button/>
+<A/>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<B>
+ click B
+<B/>
+```
+### Câu 1: click A thì number + 1 <br>
+### Câu 2: click B thì number + 1

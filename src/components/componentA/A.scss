@@ -1,0 +1,58 @@
+.wrapper_A {
+    width: 400px;
+    height: 300px;
+    // border: 1px solid #2cccff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+    background-color: #fff;
+}
+p {
+    font-size: 45px;
+    font-weight: bold;
+    color: #000;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    padding: 0.6em 2.6em !important;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    box-shadow:
+        rgba(17, 17, 26, 0.1) 0px 1px 0px,
+        rgba(17, 17, 26, 0.1) 0px 8px 24px,
+        rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    transition: tapBtn ease-in 0.1s;
+    &:first-child {
+        background-color: #43aed2;
+    }
+    &:last-child {
+        background-color: #ff6651;
+    }
+    &:active {
+        box-shadow:
+            rgba(17, 17, 26, 0.1) 0px 1px 0px,
+            rgba(17, 17, 26, 0.1) 0px 4px 12px,
+            rgba(17, 17, 26, 0.1) 0px 8px 24px;
+        transform: translateY(2px);
+        color: #fff;
+    }
+}
+
+.buttons_B {
+    display: flex;
+    justify-content: space-between;
+}
