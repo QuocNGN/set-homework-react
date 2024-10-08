@@ -1,0 +1,34 @@
+@import '../../assets/styles/mixins.scss';
+
+.container {
+    @include responsiveLayout(1440px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo-app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 120px;
+    color: white;
+    background: linear-gradient(180deg, #7BCBD4 0%, #29C6B7 100%);
+
+    &__title {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 48px;
+    }
+    &__subtitle {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 28px;
+    }
+}
+
+.register-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
