@@ -2,10 +2,6 @@
 @mixin responsiveLayout($maxWidth) {
     // Màn hình nhỏ hơn hoặc bằng 1440px
     @media (max-width: $maxWidth) {
-        .container {
-            display: flex; // Sử dụng flexbox
-        }
-
         .left {
             width: 860px; // Chiều rộng cố định cho bên trái
             flex: 0 0 860px; // Thiết lập flex-basis cho phần bên trái
@@ -19,10 +15,6 @@
 
     // Màn hình lớn hơn 1440px
     @media (min-width: $maxWidth) {
-        .container {
-            display: flex; // Sử dụng flexbox
-        }
-
         .left {
             width: 60%; // Phần bên trái chiếm 60%
             flex: 0 0 60%; // Thiết lập flex-basis cho phần bên trái

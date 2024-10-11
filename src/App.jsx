@@ -1,10 +1,11 @@
 import './App.css';
-import Register from './pages/Register/Register';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      <Register />
+      {/* Hiển thị nội dung của các trang con */}
+      <Outlet />
     </>
   );
 }

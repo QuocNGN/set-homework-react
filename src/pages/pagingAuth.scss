@@ -1,11 +1,15 @@
-@import '../../assets/styles/mixins.scss';
+@import '../assets/styles/mixins.scss';
 
 .container {
-    @include responsiveLayout(1440px);
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    & {
+        @include responsiveLayout(1440px);
+    }
 }
+
 .todo-app {
     height: 100vh;
     display: flex;
@@ -19,6 +23,7 @@
         font-size: 48px;
         font-weight: 700;
         line-height: 48px;
+        margin-bottom: 20px;
     }
     &__subtitle {
         font-size: 18px;
@@ -27,7 +32,7 @@
     }
 }
 
-.register-form {
+.auth-form {
     display: flex;
     justify-content: center;
     align-items: center;

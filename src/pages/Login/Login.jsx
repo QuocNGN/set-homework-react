@@ -11,15 +11,15 @@ import {
   Box,
   VStack,
   Heading,
+  Checkbox,
 } from '@chakra-ui/react';
 import '../pagingAuth.scss';
 
-function Register() {
+function Login() {
   const {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
-    getValues,
   } = useForm();
 
   function onSubmit(values) {
@@ -33,8 +33,8 @@ function Register() {
 
   const navigate = useNavigate();
 
-  const handleLoginClick = () => {
-    navigate('/');  // Điều hướng đến trang đăng nhập
+  const handleRegisterClick = () => {
+    navigate('/register'); // Điều hướng đến trang đăng nhập
   };
 
   return (
@@ -47,31 +47,15 @@ function Register() {
         <Box w='320px' mx='auto'>
           <form onSubmit={handleSubmit(onSubmit)}>
             <VStack spacing={4} align='flex-start' w='full'>
-              <VStack align="flex-start" pb="24px">
-                <Heading>Hello!</Heading>
-                <Text>Sign Up to Get Started</Text>
+              <VStack align='flex-start' pb='24px'>
+                <Heading>Welcome back!</Heading>
+                <Text>Login to Get Started</Text>
               </VStack>
 
-              <FormControl isInvalid={errors.hoten}>
-                <FormLabel fontSize="14px" htmlFor='hoten'>Full name</FormLabel>
-                <Input
-                  id='hoten'
-                  placeholder='Enter your name'
-                  {...register('hoten', {
-                    required: 'This is required',
-                    minLength: {
-                      value: 4,
-                      message: 'This field can not be empty',
-                    },
-                  })}
-                />
-                <FormErrorMessage fontSize="12px">
-                  {errors.hoten && errors.hoten.message}
-                </FormErrorMessage>
-              </FormControl>
-
               <FormControl isInvalid={errors.email}>
-                <FormLabel fontSize="14px" htmlFor='email'>Email Address</FormLabel>
+                <FormLabel fontSize='14px' htmlFor='email'>
+                  Email Address
+                </FormLabel>
                 <Input
                   id='email'
                   placeholder='Enter your email'
@@ -85,13 +69,15 @@ function Register() {
                     },
                   })}
                 />
-                <FormErrorMessage fontSize="12px">
+                <FormErrorMessage fontSize='12px'>
                   {errors.email && errors.email.message}
                 </FormErrorMessage>
               </FormControl>
 
               <FormControl isInvalid={errors.password}>
-                <FormLabel fontSize="14px" htmlFor='password'>Password</FormLabel>
+                <FormLabel fontSize='14px' htmlFor='password'>
+                  Password
+                </FormLabel>
                 <Input
                   id='password'
                   placeholder='Enter at least 6 characters'
@@ -105,43 +91,31 @@ function Register() {
                     },
                   })}
                 />
-                <FormErrorMessage fontSize="12px">
+                <FormErrorMessage fontSize='12px'>
                   {errors.password && errors.password.message}
                 </FormErrorMessage>
               </FormControl>
 
-              <FormControl isInvalid={errors.passwordConfirm}>
-                <FormLabel fontSize="14px" htmlFor='passwordConfirm'>
-                  Confirm Password
-                </FormLabel>
-                <Input
-                  id='passwordConfirm'
-                  type='password'
-                  placeholder='Confirm password'
-                  {...register('passwordConfirm', {
-                    required: 'This is required',
-                    validate: (value) =>
-                      value === getValues('password') ||
-                      'Password does not match',
-                  })}
-                />
-                <FormErrorMessage fontSize="12px">
-                  {errors.passwordConfirm && errors.passwordConfirm.message}
-                </FormErrorMessage>
-              </FormControl>
+              <HStack w='full' pt="24px">
+                <Checkbox>Remember me?</Checkbox>
+              </HStack>
+
               <Button
-                mt="24px"
                 colorScheme='teal'
                 isLoading={isSubmitting}
                 type='submit'
                 w='100%'
               >
-                Register
+                Login
               </Button>
               <HStack w='full'>
                 <Text>Already have an account?</Text>
-                <Button variant='link' colorScheme='blue' onClick={handleLoginClick}>
-                  Login here
+                <Button
+                  variant='link'
+                  colorScheme='blue'
+                  onClick={handleRegisterClick}
+                >
+                  Register here
                 </Button>
               </HStack>
             </VStack>
@@ -160,4 +134,4 @@ function Register() {
   </Button>
 </HStack> */
 }
-export default Register;
+export default Login;
