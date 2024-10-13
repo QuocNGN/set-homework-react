@@ -96,7 +96,7 @@ function Login() {
                 </FormErrorMessage>
               </FormControl>
 
-              <HStack w='full' pt="24px">
+              <HStack w='full' pt='24px'>
                 <Checkbox>Remember me?</Checkbox>
               </HStack>
 
